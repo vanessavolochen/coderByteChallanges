@@ -32,18 +32,12 @@ public class AgeChallenge {
 		List<Integer> idades = new ArrayList<Integer>();
 		Integer soma = 0;
 		for (String s : dados) {
-			System.out.println(s.substring(4));
 			int idade = Integer.valueOf(s.substring(4));
 			idades.add(idade);
-			if(idade >= 50) {
-				soma = soma +idade;
-			}
 		}
-		
-		System.out.println("Soma das idades : " + soma);
-		
+				
 		//Java 8 
-		int somaJ8 = idades.stream().filter(i -> i >= 50 ).mapToInt(Integer::intValue).sum();
+		long somaJ8 = ageList.stream().filter(i -> i >= 50 ).mapToInt(Integer::intValue).count();
 		System.out.println(somaJ8);
 	}
 
